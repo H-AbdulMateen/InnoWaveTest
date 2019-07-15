@@ -3,6 +3,9 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
+//kotlin kapt and navigation safeargs plugin
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs"
 
 android {
     compileSdkVersion 28
@@ -20,6 +23,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -31,4 +38,22 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //GSON
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    //Retrofit
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+
+    // ViewModel AND LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
+
+    //New Material Design
+    implementation 'com.google.android.material:material:1.1.0-alpha07'
+
+
+    //Android Room
+    implementation "androidx.room:room-runtime:2.1.0"
+    implementation "androidx.room:room-ktx:2.1.0"
+    kapt "androidx.room:room-compiler:2.1.0"
+
 }
