@@ -10,7 +10,7 @@ import retrofit2.http.Path
 
 interface GitApi {
     @GET("users/{username}")
-    suspend fun userLogin(
+    suspend fun searchUser(
         @Path("username") username: String
 
     ): Response<JsonObject>
