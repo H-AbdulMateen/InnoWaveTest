@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:background="#E2E2E2"
             android:layout_height="match_parent"
-            tools:context=".ui.auth.LoginActivity">
+            tools:context=".ui.search.SearchActivity">
 
 
         <RelativeLayout
@@ -29,6 +29,7 @@
             <ImageView
                     android:layout_marginTop="75dp"
                     android:id="@+id/iv_logo"
+                    android:src="@drawable/innowave_logo"
                     android:layout_centerHorizontal="true"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
@@ -63,7 +64,7 @@
                         android:text="@string/btn_search"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        />
+                />
 
             </LinearLayout>
 

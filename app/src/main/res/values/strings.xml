@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">InnoWaveTest</string>
+    <string name="app_name">Find Git User</string>
     <string name="btn_search">Search Git</string>
     <string name="enter_git_user">Enter Git Username</string>
+    <string name="user_name">Name</string>
+    <string name="email">User Email</string>
 </resources>

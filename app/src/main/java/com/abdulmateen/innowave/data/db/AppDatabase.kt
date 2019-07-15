@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.abdulmateen.innowave.data.db.entities.User
-import com.isofttechpro.myapplication.data.db.UserDao
+import com.abdulmateen.innowave.data.db.UserDao
 
 @Database(
     entities = [User:: class],
