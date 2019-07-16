@@ -4,4 +4,5 @@
     <string name="enter_git_user">Enter Git Username</string>
     <string name="user_name">Name</string>
     <string name="email">User Email</string>
+    <string name="to_git">To GitHub Search</string>
 </resources>

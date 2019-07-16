@@ -11,6 +11,7 @@ import com.abdulmateen.innowave.databinding.ActivitySearchBinding
 import com.abdulmateen.innowave.ui.home.HomeActivity
 import com.abdulmateen.innowave.util.hide
 import com.abdulmateen.innowave.util.show
+import com.abdulmateen.innowave.util.snackbar
 import com.abdulmateen.innowave.util.toast
 import kotlinx.android.synthetic.main.activity_search.*
 import org.kodein.di.KodeinAware
@@ -34,14 +35,12 @@ class SearchActivity : AppCompatActivity(), SearchListener, KodeinAware {
 
     }
     override fun onStarted() {
-        toast("Login Started")
+        toast("Searching......")
         progress_bar.show()
     }
 
     override fun onSuccess(user: User) {
         progress_bar.hide()
-        toast("${user.url}")
-
         Intent(this, HomeActivity::class.java).also {
             this.startActivity(it)
         }
@@ -49,7 +48,8 @@ class SearchActivity : AppCompatActivity(), SearchListener, KodeinAware {
 
     override fun onFailure(message: String) {
         progress_bar.hide()
-//        toast(message)
+        root_layout.snackbar(message)
+
     }
 }
 
