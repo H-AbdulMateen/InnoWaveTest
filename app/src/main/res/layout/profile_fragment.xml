@@ -19,39 +19,63 @@
         <LinearLayout
                 android:layout_gravity="center_horizontal"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/cyan_300">
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="200dp"
+                          android:orientation="vertical"
+                          android:background="@color/colorPrimary"  >
 
-            <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_gravity="center"
-                    app:avatar_url="@{String.valueOf(viewmodel.user.avatar_url)}" />
-            <TextView
-                    android:layout_gravity="center_horizontal"
-                    tools:text="@string/email"
-                    android:text="@{viewmodel.user.name}"
-                    android:textColor="@color/colorPrimary"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-            <TextView
-                    android:layout_gravity="center_horizontal"
-                    tools:text="@string/user_name"
-                    android:text="@{viewmodel.user.email}"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            <TextView
-                    android:layout_gravity="center_horizontal"
-                    tools:text="@string/email"
-                    android:text="@{viewmodel.user.followers_url}"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                <com.mikhaellopez.circularimageview.CircularImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        app:civ_border_color="#3f51b5"
+                        app:civ_shadow="true"
+                        app:civ_border="true"
+                        app:civ_shadow_radius="0"
+                        app:civ_shadow_color="#3f51b5"
+                        app:avatar_url="@{String.valueOf(viewmodel.user.avatar_url)}" />
+            </LinearLayout>
+<androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
+    <TextView
+            android:layout_gravity="center_horizontal"
+            tools:text="@string/user_name"
+            android:text="@{viewmodel.user.name}"
+            android:drawableLeft="@drawable/ic_person"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:textColor="#0B6FA4"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+</androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+            >
+                <TextView
+                        android:layout_gravity="center_horizontal"
+                        tools:text="@string/email"
+                        android:hint="@string/email"
+                        android:text="@{viewmodel.user.email}"
+                        android:drawableLeft="@drawable/ic_email"
+                        android:padding="10dp"
+                        android:textColor="#0B6FA4"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </androidx.cardview.widget.CardView>
 
 
         </LinearLayout>
