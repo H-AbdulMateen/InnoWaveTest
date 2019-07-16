@@ -33,16 +33,21 @@
                     android:layout_height="80dp"
                     android:layout_marginBottom="16dp"
             />
+            <ImageView android:layout_width="60dp"
+                       android:layout_height="60dp"
+                       android:layout_alignLeft="@+id/iv_logo"
+                       android:src="@drawable/git_logo"
+            />
 
 
             <LinearLayout
                     android:id="@+id/linearLayout1"
                     android:padding="18dp"
                     android:layout_below="@+id/iv_logo"
-                    android:background="#ffffff"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/transparent_background">
 
                 <EditText
                         android:text="@={viewmodel.username}"
@@ -52,7 +57,9 @@
                         android:layout_width="match_parent"
                         android:padding="12dp"
                         android:layout_marginBottom="12dp"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        android:drawableLeft="@drawable/ic_person_white"
+                        android:backgroundTint="@android:color/black"/>
 
 
 
@@ -62,8 +69,11 @@
                         android:textAllCaps="false"
                         android:text="@string/btn_search"
                         android:layout_width="150dp"
-                        android:background="@color/green_400"
+                        android:background="@drawable/btn_rounded_bg"
                         android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_search"
+                        android:drawablePadding="0dp"
+
                 />
 
             </LinearLayout>
