@@ -29,6 +29,9 @@ class ProfileFragment : Fragment(), KodeinAware {
         viewModel = ViewModelProviders.of(this, factory).get(ProfileViewModel::class.java)
         binding.viewmodel = viewModel
         binding.lifecycleOwner = this
+
+
+
         return binding.root
     }
 

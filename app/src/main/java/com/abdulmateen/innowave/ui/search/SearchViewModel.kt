@@ -27,7 +27,7 @@ class SearchViewModel (
                 val response = repository.searchUser(username!!)
                 if (response.isSuccessful) {
                     val gson = Gson()
-                    var user = gson?.fromJson(response.body(), User::class.java)
+                    var user = gson.fromJson(response.body(), User::class.java)
                     user?.let {
                         searchListener?.onSuccess(user)
                         repository.saveUser(user)

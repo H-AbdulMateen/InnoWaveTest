@@ -16,12 +16,17 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     dataBinding {
@@ -48,7 +53,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
 
     //New Material Design
-    implementation 'com.google.android.material:material:1.1.0-alpha07'
+    implementation 'com.google.android.material:material:1.1.0-alpha08'
 
 
     //Android Room
@@ -62,6 +67,8 @@ dependencies {
 
 
     //Android Navigation Architecture
-    implementation "androidx.navigation:navigation-fragment-ktx:2.1.0-alpha05"
-    implementation "androidx.navigation:navigation-ui-ktx:2.1.0-alpha05"
+    implementation "androidx.navigation:navigation-fragment-ktx:2.1.0-alpha06"
+    implementation "androidx.navigation:navigation-ui-ktx:2.1.0-alpha06"
+
+    implementation "com.squareup.picasso:picasso:2.71828"
 }
