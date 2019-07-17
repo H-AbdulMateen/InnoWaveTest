@@ -6,7 +6,8 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.home.followers.FollowersFragment">
+        tools:context=".ui.home.followers.FollowersFragment"
+        android:background="@color/blue_300">
 
 
     <androidx.recyclerview.widget.RecyclerView

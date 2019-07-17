@@ -42,9 +42,9 @@ class FollowerRepository (private val api: GitApi,
          /////////////////////////////////////////
          val response = api.getFollowers(username!!)
          if (response.isSuccessful) {
+             db.getFollowerDao().deleteExistedFollowers()
              val gson = Gson()
              val response = gson.fromJson(response.body() , Array<Follower>::class.java).toList()
-//             val response = gson.fromJson(response.body(), Follower::class.java)
              followers.postValue(response)
     }
      }

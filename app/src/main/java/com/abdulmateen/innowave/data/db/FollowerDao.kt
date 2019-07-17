@@ -15,4 +15,7 @@ interface FollowerDao {
     @Query("SELECT * FROM Follower")
     fun getFollowers() : LiveData<List<Follower>>
 
+    @Query("DELETE FROM Follower")
+    fun deleteExistedFollowers()
+
 }
