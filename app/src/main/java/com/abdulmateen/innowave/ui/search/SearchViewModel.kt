@@ -3,6 +3,7 @@ package com.abdulmateen.innowave.ui.search
 import android.view.View
 import androidx.lifecycle.ViewModel
 import com.abdulmateen.innowave.data.db.entities.User
+import com.abdulmateen.innowave.data.preferences.PreferenceProvider
 import com.abdulmateen.innowave.data.repositories.UserRepository
 import com.abdulmateen.innowave.util.ApiException
 import com.abdulmateen.innowave.util.Coroutines
@@ -10,7 +11,8 @@ import com.abdulmateen.innowave.util.NoInternetException
 import com.google.gson.Gson
 
 class SearchViewModel (
-    private val repository: UserRepository
+    private val repository: UserRepository,
+    private val pref: PreferenceProvider
 ): ViewModel(){
     var searchListener: SearchListener? = null
     var username: String? = null
@@ -18,7 +20,7 @@ class SearchViewModel (
     fun onSearchButtonClick(view: View) {
         searchListener?.onStarted()
         if (username.isNullOrEmpty()) {
-            searchListener?.onFailure("Invalid email or password")
+            searchListener?.onFailure("Invalid username")
             //
         return
     }
@@ -31,7 +33,7 @@ class SearchViewModel (
                     user?.let {
                         searchListener?.onSuccess(user)
                         repository.saveUser(user)
-
+                        pref.savePrefUser(username!!)
                         return@main
                     }
                 }

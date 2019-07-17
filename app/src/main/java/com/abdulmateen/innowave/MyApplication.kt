@@ -4,7 +4,10 @@ import android.app.Application
 import com.abdulmateen.innowave.data.db.AppDatabase
 import com.abdulmateen.innowave.data.network.GitApi
 import com.abdulmateen.innowave.data.network.NetworkConnectionInterceptor
+import com.abdulmateen.innowave.data.preferences.PreferenceProvider
+import com.abdulmateen.innowave.data.repositories.FollowerRepository
 import com.abdulmateen.innowave.data.repositories.UserRepository
+import com.abdulmateen.innowave.ui.home.followers.FollowersViewModelFactory
 import com.abdulmateen.innowave.ui.home.profile.ProfileViewModelFactory
 import com.abdulmateen.innowave.ui.search.SearchViewModelFactory
 import org.kodein.di.Kodein
@@ -24,7 +27,11 @@ class MyApplication : Application(), KodeinAware {
         bind() from singleton { GitApi(instance()) }
         bind() from singleton { AppDatabase(instance()) }
         bind() from singleton { UserRepository(instance(), instance()) }
-        bind() from provider { SearchViewModelFactory(instance()) }
+        bind() from singleton { PreferenceProvider(instance()) }
+        bind() from singleton { FollowerRepository(instance(),instance(),instance()) }
+        bind() from provider { SearchViewModelFactory(instance(), instance()) }
         bind() from provider { ProfileViewModelFactory(instance()) }
+        bind() from provider { FollowersViewModelFactory(instance()) }
+
     }
 }

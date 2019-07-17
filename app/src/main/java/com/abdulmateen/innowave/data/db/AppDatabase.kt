@@ -4,15 +4,15 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.abdulmateen.innowave.data.db.entities.Follower
 import com.abdulmateen.innowave.data.db.entities.User
-import com.abdulmateen.innowave.data.db.UserDao
 
 @Database(
-    entities = [User:: class],
-    version = 1
-)
+    entities = [User:: class, Follower :: class],
+    version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun getUserDao(): UserDao
+    abstract fun getFollowerDao(): FollowerDao
 
     companion object {
 
