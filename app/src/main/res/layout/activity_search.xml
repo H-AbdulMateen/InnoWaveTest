@@ -69,12 +69,9 @@
                         android:textAllCaps="false"
                         android:text="@string/btn_search"
                         android:layout_width="150dp"
-                        android:background="@drawable/btn_rounded_bg"
                         android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_search"
                         android:drawablePadding="0dp"
-
-                />
+                        />
 
             </LinearLayout>
 

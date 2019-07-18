@@ -3,11 +3,17 @@
     <string name="btn_search">Search Git</string>
     <string name="enter_git_user">Enter Git Username</string>
     <string name="user_name">Name</string>
-    <string name="email">User Email</string>
+    <string name="email">No Email to show</string>
     <string name="to_git">To GitHub Search</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="follower_name">Follower Name</string>
     <string name="url">Follower Url</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="repos">Repos</string>
+    <string name="profile_url">Profile URL</string>
+    <string name="company">No company to show</string>
+    <string name="address">No Address to show</string>
 </resources>

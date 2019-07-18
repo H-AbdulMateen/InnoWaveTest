@@ -16,7 +16,11 @@ data class User (
     var url: String?,
     var html_url: String?,
     var company: String?,
+    var location: String?,
     var followers_url: String?,
+    var followers: Int?,
+    var following: Int?,
+    var public_repos: Int?,
     var created_at: String?,
     var updated_at: String?
 ){

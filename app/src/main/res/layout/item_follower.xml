@@ -10,30 +10,18 @@
     <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="3dp">
+            android:layout_marginBottom="4dp">
 
         <RelativeLayout
                 android:padding="12dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-            <TextView
-                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                    android:id="@+id/tv_follower"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/follower_name"
-                    android:text="@{follower.login}"
-                    android:layout_toRightOf="@+id/imageView"
-                    tools:text="@string/user_name"/>
-
-
+                android:layout_height="match_parent"
+                android:background="@color/grey_10"
+                >
 
             <com.mikhaellopez.circularimageview.CircularImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_gravity="center"
                     app:civ_border_color="#3f51b5"
                     android:id="@+id/imageView"
                     app:civ_shadow="true"
@@ -42,18 +30,33 @@
                     app:civ_shadow_color="#3f51b5"
                     app:avatar_url="@{String.valueOf(follower.avatar_url)}" />
 
-            <TextView
-                    android:textColor="@color/colorPrimary"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:text="@{follower.url}"
-                    android:layout_below="@id/tv_follower"
-                    android:id="@+id/tv_follower_mail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/imageView"
-                    android:textStyle="italic"
-                    android:hint="@string/url"/>
+                <TextView
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        app:fontFamily="cursive"
+                        android:id="@+id/tv_follower"
+                        android:textColor="@color/green_900"
+                        android:textSize="25dp"
+                        android:layout_width="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/follower_name"
+                        android:text="@{follower.login}"
+                        tools:text="@string/user_name"
+                        android:layout_toRightOf="@+id/imageView"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        tools:ignore="RtlHardcoded"/>
 
+                <!--<TextView-->
+                        <!--android:textColor="@color/colorPrimary"-->
+                        <!--android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+                        <!--android:text="@{follower.url}"-->
+                        <!--android:id="@+id/tv_follower_mail"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_toRightOf="@+id/imageView"-->
+                        <!--android:textStyle="italic"-->
+                        <!--android:hint="@string/url"/>-->
         </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
 </layout>

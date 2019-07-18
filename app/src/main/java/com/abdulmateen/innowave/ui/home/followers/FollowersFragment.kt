@@ -14,20 +14,21 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.abdulmateen.innowave.R
 import com.abdulmateen.innowave.data.db.entities.Follower
-import com.abdulmateen.innowave.util.Coroutines
-import com.abdulmateen.innowave.util.hide
-import com.abdulmateen.innowave.util.show
+import com.abdulmateen.innowave.data.db.entities.User
+import com.abdulmateen.innowave.ui.search.SearchListener
+import com.abdulmateen.innowave.util.*
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_search.*
 import kotlinx.android.synthetic.main.activity_search.progress_bar
 import kotlinx.android.synthetic.main.fragment_followers.*
+import kotlinx.coroutines.withContext
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
 import org.kodein.di.generic.instance
 import java.util.Collections.addAll
 
-class FollowersFragment : Fragment(), KodeinAware {
+class FollowersFragment : Fragment(),SearchListener, KodeinAware {
 
     override val kodein by kodein()
 
@@ -76,6 +77,18 @@ class FollowersFragment : Fragment(), KodeinAware {
         return this.map {
             FollowerItem(it)
         }
+    }
+
+    override fun onStarted() {
+    //
+    }
+
+    override fun onSuccess(user: User) {
+        //
+    }
+
+    override fun onFailure(message: String) {
+    frameLayout.snackbar(message)
     }
 
 }
