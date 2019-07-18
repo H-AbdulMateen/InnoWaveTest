@@ -15,3 +15,9 @@ Used Dependency Injections which made the code independent from other classes.
 Used Retrofit for Network api calls.
 
 Manage No Network Exception And Api Exceptions.
+
+Used Shared Preference 
+
+Groupei with Recycler View
+
+Used Glide library to Load and Display images from URL.
