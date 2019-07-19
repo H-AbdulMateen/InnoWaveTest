@@ -10,5 +10,5 @@
               android:label="Profile" tools:layout="@layout/profile_fragment"/>
     <fragment android:id="@+id/followersFragment"
               android:name="com.abdulmateen.innowave.ui.home.followers.FollowersFragment"
-              android:label="Profile" tools:layout="@layout/profile_fragment"/>
+              tools:layout="@layout/profile_fragment" android:label="Followers"/>
 </navigation>
